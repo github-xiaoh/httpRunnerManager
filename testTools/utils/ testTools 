@@ -1,0 +1,6 @@
+[2021-08-22 08:47:56,362] [7943] [INFO] - common.<module> (common.py:117) - 输出日志1
+[2021-08-22 08:47:56,362] [7943] [INFO] - common.<module> (common.py:118) - 输出日志2
+[2021-08-22 08:47:56,363] [7943] [INFO] - common.<module> (common.py:119) - 输出日志3
+[2021-08-22 08:48:23,372] [8039] [INFO] - common.<module> (common.py:117) - 输出日志1
+[2021-08-22 08:48:23,373] [8039] [INFO] - common.<module> (common.py:118) - 输出日志2
+[2021-08-22 08:48:23,373] [8039] [INFO] - common.<module> (common.py:119) - 输出日志3

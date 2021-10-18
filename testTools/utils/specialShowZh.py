@@ -55,10 +55,12 @@ def sort_user(roomId):
         'X-User-Id': '89'
     }
 
-    data = json.dumps({
-        "roomId": roomId,
-        "userId": "12059"
-    })
+    data = json.dumps(
+        {
+            "roomId": 213121,
+            "interactiveList": "[{\"userId\":12059,\"checked\":1}]"
+        }
+    )
 
     result = requests.post(url=host+path,data=data,headers=headers)
     resultJ = json.loads(result.content)
@@ -182,26 +184,26 @@ def interaction_methods(roomId):
 
 
 # 创建专场
-roomInfo = special_show_zh()
-roomId = roomInfo['data']['id']
-print('创建首映礼场次号：{}'.format(roomId))
+# roomInfo = special_show_zh()
+# roomId = roomInfo['data']['id']
+# print('创建首映礼场次号：{}'.format(roomId))
 
 # 添加主创人员
-sort_user(roomId)
+# sort_user(roomId)
 
 # 添加主持人
-host_user(roomId)
+# host_user(roomId)
 
 # 添加图片配置
-img_save(roomId)
+# img_save(roomId)
 
 # 添加活动节目单
-activity_info(roomId)
+# activity_info(roomId)
 
 # 添加活动分享类型
-activity_shareType(roomId)
+# activity_shareType(roomId)
 
 # 添加互动方式
-interaction_methods(roomId)
+# interaction_methods(roomId)
 
 

@@ -112,11 +112,11 @@ def setup_log(log_name):
     logger.addHandler(file_handler)
     return logger
 
-# logging_testTools = setup_log(" testTools ")
-#
-# logging_testTools.info("输出日志1")
-# logging_testTools.info("输出日志2")
-# logging_testTools.info("输出日志3")
+logging_testTools = setup_log("testTools")
+
+logging_testTools.info("输出日志11")
+logging_testTools.info("输出日志22")
+logging_testTools.info("输出日志33")
 
 # path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # print(path)

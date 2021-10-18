@@ -114,6 +114,8 @@
                     $("#ajax_alert_1").val(regionId);
                     break
                 }
+            }else {
+                break
             }
         }
         window.location.href = ("{% url 'sc_cms:special_scene' %}?regionId=" + regionId)

@@ -41,11 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ApiManager',
-    'djcelery',
+    'djcelery', # 定时任务和异步执行
     # 'testTools',
     # 'sc_pay',
     'user_ch',
-    'corsheaders' # 跨域App
+    'AutoApiTest',
+    'corsheaders', # 解决跨域问题App
 ]
 
 MIDDLEWARE = [
@@ -155,6 +156,14 @@ if DEBUG:
             'HOST': 'rm-2ze04c849v9m32bzj.mysql.rds.aliyuncs.com',
             'PORT': '3306',
         },
+        'auto_api_test': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'cmsplatform',  # 新建数据库名
+            'USER': 'root',  # 数据库登录名
+            'PASSWORD': 'root123456',  # 数据库登录密码
+            'HOST': '127.0.0.1',  # 数据库所在服务器ip地址
+            'PORT': '3306',  # 监听端口 默认3306即可
+        },
     }
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),  # 静态文件额外目录
@@ -185,6 +194,7 @@ DATABASE_APPS_MAPPING = {
     # 'testTools': 'db1',
     # 'sc_pay': 'db2',
     'user_ch': 'sc_cms_ch',
+    'AutoApiTest':'auto_api_test'
 }
 
 
@@ -198,12 +208,16 @@ STATICFILES_FINDERS = (
 
 SESSION_COOKIE_AGE = 300 * 60
 
+
+# 可以理解为自动查找我们定义的task
 djcelery.setup_loader()
+
 CELERY_ENABLE_UTC = True
-CELERY_TIMEZONE = 'Asia/Shanghai'
-BROKER_URL = 'amqp://guest:guest@127.0.0.1:5672//' if DEBUG else 'amqp://guest:guest@127.0.0.1:5672//'
-CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
-CELERY_RESULT_BACKEND = 'djcelery.backends.database:DatabaseBackend'
+CELERY_TIMEZONE = 'Asia/Shanghai'  # celery 时区
+BROKER_URL = 'amqp://guest:guest@127.0.0.1:5672//' if DEBUG else 'amqp://guest:guest@127.0.0.1:5672//' # 任务容器地址，rabbitMQ地址
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'  # celey处理器，固定写法
+CELERY_RESULT_BACKEND = 'djcelery.backends.database:DatabaseBackend' # celery结果返回，可用于跟踪结果
+# celery内容等消息的格式设置
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
@@ -217,7 +231,7 @@ EMAIL_SEND_USERNAME = '443990096@qq.com'  # 定时任务报告发送邮箱，支
 EMAIL_SEND_PASSWORD = 'btsfupcotihybhhj'     # 邮箱密码
 
 
-
+# 解决跨越问题
 # 配置白名单或者全部允许
 
 # 全部允许配置

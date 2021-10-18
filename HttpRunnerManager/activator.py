@@ -1,7 +1,7 @@
 
 def process(request, **kwargs):
     app = kwargs.pop('app', None)
-    fun = kwargs.pop('function ', None)
+    fun = kwargs.pop('function', None)
     index = kwargs.pop('id', None)
 
     if app == 'api':

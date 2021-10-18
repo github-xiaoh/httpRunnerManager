@@ -10,5 +10,11 @@ urlpatterns = [
     url(r'^reports',views.test_report,name='test_report'),
     url(r'^ticketcreateinc',views.operation_ticket_create_inc,name='tiicketcreateinc'),
     url(r'^ticketcreatezh',views.operation_ticket_create_zh,name='tiicketcreatezh'),
+    url(r'^getcode',views.getCode,name='getcode'),
+    url(r'^getfilmzh',views.getFilmZH,name='getfilmzh'),
+    url(r'^createpremiere',views.createPremiere,name='createpremiere'),
+    url(r'^createspecial',views.createSpecial,name='createspecial'),
+    url(r'^createbaseInfo',views.createBaseInfo,name='createbaseInfo'),
+    url(r'^createsyncFilm',views.createSyncFilm,name='createsyncFilm'),
 
 ]

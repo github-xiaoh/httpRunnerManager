@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>请问</title>
+
+  <!-- 导入jquery -->
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <h5>{{msg}}</h5>
+</div>
+
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',   //元素的简称，用于定位元素位置
+        data: {       //数据显示，用来给页面提供数据
+            msg: '数据显示',
+        },
+        methods: {  // 这个method提供了当前vue实例中所有可用的方法
+            show: function () {
+
+            }
+        },
+
+    })
+</script>
+
+</html>

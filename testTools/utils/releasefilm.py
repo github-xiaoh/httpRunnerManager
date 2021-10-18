@@ -80,7 +80,7 @@ def getTimes():
     # 将时间戳转换为时间
 
     return nowt_s, timestamp,nowt_ms
-
+getTimes()
 
 def mediaAddsource(filmName,regionId):
     """

@@ -1,0 +1,6 @@
+[2020-09-11 15:29:36,525] [39767] [INFO] - common.<module> (common.py:117) - 输出日志1
+[2020-09-11 15:29:36,525] [39767] [INFO] - common.<module> (common.py:118) - 输出日志2
+[2020-09-11 15:29:36,525] [39767] [INFO] - common.<module> (common.py:119) - 输出日志3
+[2020-09-11 15:32:43,068] [39891] [INFO] - common.<module> (common.py:117) - 输出日志1
+[2020-09-11 15:32:43,069] [39891] [INFO] - common.<module> (common.py:118) - 输出日志2
+[2020-09-11 15:32:43,069] [39891] [INFO] - common.<module> (common.py:119) - 输出日志3
