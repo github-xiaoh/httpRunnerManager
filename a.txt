@@ -1,3 +1,5 @@
+这个就是传送下命令
+
 CREATE TABLE `case_info` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `case_name` varchar(50) NOT NULL COMMENT '测试用例名称',
