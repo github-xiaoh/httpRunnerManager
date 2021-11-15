@@ -1,0 +1,53 @@
+CREATE TABLE `case_info` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `case_name` varchar(50) NOT NULL COMMENT '测试用例名称',
+  `status` tinyint(1) NOT NULL COMMENT '是否生效1 生效,0 失效',
+  `request_info` longtext NOT NULL COMMENT '请求信息',
+  `author` char(20) NOT NULL COMMENT '创建人',
+  `belong_project` char(20) NOT NULL COMMENT '所属项目',
+  `belong_module` char(20) NOT NULL COMMENT '所属模块',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `type` tinyint(3) NOT NULL COMMENT '类型 1 用例,2 配置',
+  `include` longtext COMMENT '配置关联',
+  `expect` longtext COMMENT '用例预期值',
+  `validate` longtext COMMENT '用例验证参数',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `module_info` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `module_name` varchar(50) NOT NULL COMMENT '模块名称',
+  `status` tinyint(1) NOT NULL COMMENT '是否生效1 生效,0 失效',
+  `test_user` varchar(50) NOT NULL COMMENT '测试负责人',
+  `belong_project_id` tinyint(10) NOT NULL COMMENT '所属项目',
+  `simple_desc` longtext NOT NULL COMMENT '项目简要描述',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=215 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `project_info` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `project_name` varchar(50) NOT NULL COMMENT '项目名称',
+  `status` tinyint(1) NOT NULL COMMENT '是否生效1 生效,0 失效',
+  `test_user` varchar(50) NOT NULL COMMENT '测试负责人',
+  `dev_user` varchar(50) NOT NULL COMMENT '开发负责人',
+  `responsible_name` varchar(50) NOT NULL COMMENT '项目负责人',
+  `publish_app` varchar(20) NOT NULL COMMENT '发布应用',
+  `simple_desc` longtext NOT NULL COMMENT '项目简要描述',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `report_info` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `report_name` varchar(50) NOT NULL COMMENT '测试报告名称',
+  `status` tinyint(1) NOT NULL COMMENT '是否成功1 成功,0 失败',
+  `create_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `update_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `report_html` longtext NOT NULL COMMENT '测试报告内容',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=utf8;
+
