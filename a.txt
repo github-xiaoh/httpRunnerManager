@@ -1,4 +1,4 @@
-这个就是传送下命令，没有什么特殊含义，可以随便更改
+这个就是传送下命令，没有什么特殊含义，可以随便更改！！！
 
 CREATE TABLE `case_info` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
